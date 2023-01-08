@@ -3,3 +3,24 @@ soong_namespace {
         "vendor/qcom/opensource/commonsys-intf/display"
     ],
 }
+
+soong_config_module_type {
+    name: "qtidisplaycommonsys_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "qtidisplaycommonsys",
+    bool_variables: [
+        "gralloc_handle_has_no_reserved_size",
+    ],
+    properties: [
+        "cflags",
+    ],
+}
+
+qtidisplaycommonsys_cc_defaults {
+    name: "qtidisplaycommonsys_defaults",
+    soong_config_variables: {
+        gralloc_handle_has_no_reserved_size: {
+            cflags: ["-DGRALLOC_HANDLE_HAS_NO_RESERVED_SIZE"],
+        },
+    },
+}

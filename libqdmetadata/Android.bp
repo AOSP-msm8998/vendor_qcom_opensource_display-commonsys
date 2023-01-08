@@ -22,6 +22,7 @@ cc_library_shared {
 
 cc_library_shared {
     name: "libqdMetaData.system",
+    defaults: ["qtidisplaycommonsys_defaults"],
     system_ext_specific: true,
     cflags: [
         "-Wno-sign-conversion",
